@@ -1,0 +1,5 @@
+[submodule "build"]
+	path = build
+	url = ../../xiph/vorbis.git
+	branch = main
+	update = rebase
