@@ -1,4 +1,4 @@
-![Opus Logo](./opus-logo.svg)
+![Vorbis Logo](./vorbis-logo.svg)
 
 Custom LibVorbis Build
 --------------------
