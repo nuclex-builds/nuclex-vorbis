@@ -51,11 +51,11 @@ endif()
 
 # -------------------------------------------------------------------------------------------------
 
-#configure_file(
-#  "${PROJECT_SOURCE_DIR}/config.h"
-#  "${PROJECT_SOURCE_DIR}/build/config.h"
-#  COPYONLY
-#)
+configure_file(
+  "${PROJECT_SOURCE_DIR}/config.h"
+  "${PROJECT_SOURCE_DIR}/build/config.h"
+  COPYONLY
+)
 
 # -------------------------------------------------------------------------------------------------
 
