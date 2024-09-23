@@ -53,7 +53,7 @@ endif()
 
 configure_file(
   "${PROJECT_SOURCE_DIR}/config.h"
-  "${PROJECT_SOURCE_DIR}/build/config.h"
+  "${PROJECT_SOURCE_DIR}/build/lib/config.h"
   COPYONLY
 )
 
@@ -115,11 +115,21 @@ add_library(VorbisFile::Static ALIAS VorbisFile)
 add_library(VorbisEnc STATIC)
 add_library(VorbisEnc::Static ALIAS VorbisEnc)
 
-#target_compile_definitions(
-#  Vorbis
-#  PRIVATE HAVE_CONFIG_H
-#  PRIVATE VORBIS_BUILD
-#)
+target_compile_definitions(
+  Vorbis
+  PUBLIC OV_EXCLUDE_STATIC_CALLBACKS
+  PRIVATE HAVE_CONFIG_H
+)
+target_compile_definitions(
+  VorbisFile
+  PUBLIC OV_EXCLUDE_STATIC_CALLBACKS
+  PRIVATE HAVE_CONFIG_H
+)
+target_compile_definitions(
+  VorbisEnc
+  PUBLIC OV_EXCLUDE_STATIC_CALLBACKS
+  PRIVATE HAVE_CONFIG_H
+)
 
 target_include_directories(
   Vorbis

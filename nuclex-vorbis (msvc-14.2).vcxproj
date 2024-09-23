@@ -105,7 +105,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PreprocessorDefinitions>VORBIS_BUILD;HAVE_CONFIG_H;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OV_EXCLUDE_STATIC_CALLBACKS;HAVE_CONFIG_H;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(ProjectDir)build\include\;$(ProjectDir)..\nuclex-ogg\build\include\;$(ProjectDir)build\include\;$(ProjectDir)build\</AdditionalIncludeDirectories>
       <StringPooling>true</StringPooling>
@@ -124,7 +124,7 @@
     <ClCompile>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>VORBIS_BUILD;HAVE_CONFIG_H;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OV_EXCLUDE_STATIC_CALLBACKS;HAVE_CONFIG_H;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(ProjectDir)build\include\;$(ProjectDir)..\nuclex-ogg\build\include\;$(ProjectDir)build\include\;$(ProjectDir)build\</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
@@ -147,7 +147,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>VORBIS_BUILD;HAVE_CONFIG_H;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OV_EXCLUDE_STATIC_CALLBACKS;HAVE_CONFIG_H;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(ProjectDir)build\include\;$(ProjectDir)..\nuclex-ogg\build\include\;$(ProjectDir)build\include\;$(ProjectDir)build\</AdditionalIncludeDirectories>
       <StringPooling>true</StringPooling>
@@ -165,7 +165,7 @@
     <ClCompile>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>VORBIS_BUILD;HAVE_CONFIG_H;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OV_EXCLUDE_STATIC_CALLBACKS;HAVE_CONFIG_H;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(ProjectDir)build\include\;$(ProjectDir)..\nuclex-ogg\build\include\;$(ProjectDir)build\include\;$(ProjectDir)build\</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
@@ -233,9 +233,9 @@
   <ItemGroup>
     <CustomBuild Include="config.h">
       <FileType>Document</FileType>
-      <Command>COPY "$(ProjectDir)config.h" "$(ProjectDir)build\"</Command>
+      <Command>COPY "$(ProjectDir)config.h" "$(ProjectDir)build\lib\"</Command>
       <Message>Copying %(Filename) into build directory...</Message>
-      <Outputs>$(ProjectDir)build\config.h</Outputs>
+      <Outputs>$(ProjectDir)build\lib\config.h</Outputs>
       <LinkObjects>false</LinkObjects>
       <TreatOutputAsContent>false</TreatOutputAsContent>
     </CustomBuild>
