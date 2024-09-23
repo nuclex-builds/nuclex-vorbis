@@ -5,7 +5,7 @@ cmake_minimum_required (VERSION 3.18)
 
 project(
   Vorbis
-  VERSION 1.4
+  VERSION 1.3.7
   DESCRIPTION "Lossy audio codec that is free and well-established"
 )
 
